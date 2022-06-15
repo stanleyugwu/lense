@@ -2,7 +2,14 @@
   "expo": {
     "name": "lense",
     "slug": "lense",
+    "description": "A voucher top-up and QR code scanning app with smartness",
     "version": "1.0.0",
+    "icon": "./assets/images/expo_icon.png",
+    "splash": {
+      "image": "./assets/images/expo_splash_screen.png",
+      "backgroundColor": "#ffffff",
+      "resizeMode": "cover"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
