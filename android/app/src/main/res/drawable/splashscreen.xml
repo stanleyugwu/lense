@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:drawable="@color/splashscreen_background"/>
+  <item android:drawable="@drawable/bg_gradient"/>
+  <item
+        android:gravity="center"
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@drawable/vector_icon"/>
+  <item
+        android:gravity="bottom|center_horizontal"
+        android:drawable="@drawable/splash_text"
+        android:bottom="60dp"/>
 </layer-list>
