@@ -1,27 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
+import useLoadFonts from "./hooks/useLoadFonts";
 import SplashScreen from 'react-native-splash-screen';
 
 export default function App() {
-  useEffect(() => {
-    // We're natively showing splash screen, so we hide it here
-    SplashScreen.hide()
-  }, [])
-  
+  const isFontsLoaded = useLoadFonts();
+  if (!isFontsLoaded) return null; // wait till fonts are loaded before rendering
+  SplashScreen.hide(); // now hide native splashscreen, after fonts are loaded
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text>HELLO</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
