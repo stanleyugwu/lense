@@ -10,6 +10,7 @@
       "backgroundColor": "#ffffff",
       "resizeMode": "cover"
     },
+    "scheme": "lense",
     "assetBundlePatterns": [
       "**/*"
     ],
