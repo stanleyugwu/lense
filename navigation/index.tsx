@@ -9,6 +9,7 @@ import Colors from "../constants/Colors";
 // Screens
 import OnboardingScreen from "../screens/OnboardingScreen";
 import HomeScreen from "../screens/HomeScreen";
+import AboutScreen from "../screens/AboutScreen";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
@@ -21,6 +22,7 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="AboutScreen" component={AboutScreen} />
     </Stack.Navigator>
   );
 }
