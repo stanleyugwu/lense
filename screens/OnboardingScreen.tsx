@@ -2,7 +2,12 @@ import React from "react";
 import Text from "../components/Text";
 // @ts-ignore
 import PaperOnboarding from "react-native-paper-onboarding";
-import { ScrollView, StatusBar, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons as Icon } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 
@@ -10,33 +15,7 @@ import Colors from "../constants/Colors";
 import Screen1Icon from "../assets/images/onboardingScreen/screen1icon.svg";
 import Screen2Icon from "../assets/images/onboardingScreen/screen2icon.svg";
 import Screen3Icon from "../assets/images/onboardingScreen/screen3icon.svg";
-import { useNavigation } from "@react-navigation/native";
-
-const GetStartedButton = () => {
-  const navigation = useNavigation();
-  const handlePress = () => {
-    navigation.navigate("HomeScreen");
-  };
-
-  return (
-    <TouchableOpacity
-      style={{
-        paddingHorizontal: 30,
-        backgroundColor: Colors.primary,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      onPress={handlePress}
-      activeOpacity={0.8}
-    >
-      <Text type="bodySemibold" style={{ padding: 18 }}>
-        Get Started
-      </Text>
-      <Icon name="chevron-forward-sharp" style={{ fontSize: 20 }} />
-    </TouchableOpacity>
-  );
-};
+import { StackScreenProps } from "../types";
 
 const Screen1 = () => {
   return (
@@ -88,11 +67,28 @@ Screen3.backgroundColor = "#D183D2";
 
 // onboarding screens
 const screens = [Screen1, Screen2, Screen3];
-const OnboardingScreen = () => {
+const OnboardingScreen = ({
+  navigation,
+}: StackScreenProps<"OnboardingScreen">) => {
   return (
     <>
       <PaperOnboarding screens={screens} />
-      <GetStartedButton />
+      <TouchableOpacity
+        style={{
+          paddingHorizontal: 30,
+          backgroundColor: Colors.primary,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        onPress={() => navigation.replace("HomeScreen")}
+        activeOpacity={0.8}
+      >
+        <Text type="bodySemibold" style={{ padding: 18 }}>
+          Get Started
+        </Text>
+        <Icon name="chevron-forward-sharp" style={{ fontSize: 20 }} />
+      </TouchableOpacity>
     </>
   );
 };
