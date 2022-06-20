@@ -4,10 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StackParamList } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import Colors from "../constants/Colors";
 
 // Screens
 import OnboardingScreen from "../screens/OnboardingScreen";
-import Colors from "../constants/Colors";
+import HomeScreen from "../screens/HomeScreen";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
@@ -19,6 +20,7 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
